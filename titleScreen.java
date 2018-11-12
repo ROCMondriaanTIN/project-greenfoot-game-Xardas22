@@ -5,15 +5,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author R. Springer
  */
-public class MyWorld extends World {
+public class titleScreen extends World {
 
     private CollisionEngine ce;
+    
     
     /**
      * Constructor for objects of class MyWorld.
      *
      */
-    public MyWorld() {
+    public titleScreen() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
@@ -52,6 +53,10 @@ public class MyWorld extends World {
         addObject(camera, 0, 0);
         addObject(hero, 300, 200);
         addObject(new Enemy(), 1170, 410);
+        
+        Music Music = new Music();
+        
+        addObject(Music, 978, 779);
         
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
