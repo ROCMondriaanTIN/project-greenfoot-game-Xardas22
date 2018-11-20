@@ -11,14 +11,22 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
 
-    public Hero() {
+    public Hero(String image) {
         super();
         gravity = 9.8;
         acc = 0.6;
         drag = 0.8;
-        setImage("p1.png");
+        setImage(image);
     }
 
+    public boolean onGround()
+    {
+        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+        Tile tile = (Tile) under;
+        return tile != null && tile.isSolid == true;
+    }
+    
+    
     @Override
     public void act() {
         handleInput();
@@ -33,13 +41,20 @@ public class Hero extends Mover {
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
                 getWorld().removeObject(this);
-                break;
+                return;
+            }
+        }
+        
+        for (Actor waterTile : getIntersectingObjects(WaterTile.class)) {
+            if (waterTile != null) {
+                getWorld().removeObject(this);
+                return;
             }
         }
     }
 
     public void handleInput() {
-        if (Greenfoot.isKeyDown("w")) {
+        if (Greenfoot.isKeyDown("w") && onGround() == true) {
             velocityY = -10;
         }
 

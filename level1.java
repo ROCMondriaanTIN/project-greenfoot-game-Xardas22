@@ -43,7 +43,9 @@ public class level1 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero();
+        Hero hero = new Hero("p1_stand.png");
+        Hero hero2 = new Hero("p2_stand.png");
+        Hero hero3 = new Hero("p3_stand.png");
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
@@ -62,6 +64,8 @@ public class level1 extends World {
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
         ce.addCollidingMover(hero);
+        
+        
     }
         
     @Override
