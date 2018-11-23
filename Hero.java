@@ -73,15 +73,20 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        animateStanding();
+        animateStanding();        
         if (spacebar() && onGround() == true) 
         {
             velocityY = -12;
+            setImage("p1_jump.png");
         }
 
         if (keyLeft()) 
         {
             velocityX = -2;
+            if(animateCounter % 3 == 0)
+            {
+                animateLeft();
+            }
         } 
         
         else if (keyRight()) 
@@ -104,7 +109,7 @@ public class Hero extends Mover {
             setImage("p1_stand.png");            
         }
     }
-    
+           
     public void animateRight()
     {
         if(frame == 1)
@@ -150,6 +155,69 @@ public class Hero extends Mover {
          else if(frame == 11)
         {
             setImage("p1_walk11.png");
+            frame = 1;
+            return;
+        }   
+        
+        frame ++;
+    }
+    
+    public void animateLeft()
+    {
+        if(frame == 1)
+        {
+            setImage("p1_walk01.png");
+            getImage().mirrorHorizontally();
+        }
+        else if(frame == 2)
+        {
+            setImage("p1_walk02.png");
+            getImage().mirrorHorizontally();
+        }
+         else if(frame == 3)
+        {
+            setImage("p1_walk03.png");
+            getImage().mirrorHorizontally();
+        } 
+         else if(frame == 4)
+        {
+            setImage("p1_walk04.png");
+            getImage().mirrorHorizontally();
+        } 
+         else if(frame == 5)
+        {
+            setImage("p1_walk05.png");
+            getImage().mirrorHorizontally();
+        } 
+         else if(frame == 6)
+        {
+            setImage("p1_walk06.png");
+            getImage().mirrorHorizontally();
+        } 
+         else if(frame == 7)
+        {
+            setImage("p1_walk07.png");
+            getImage().mirrorHorizontally();
+        }
+         else if(frame == 8)
+        {
+            setImage("p1_walk08.png");
+            getImage().mirrorHorizontally();
+        }
+         else if(frame == 9)
+        {
+            setImage("p1_walk09.png");
+            getImage().mirrorHorizontally();
+        }
+         else if(frame == 10)
+        {
+            setImage("p1_walk10.png");
+            getImage().mirrorHorizontally();
+        }
+         else if(frame == 11)
+        {
+            setImage("p1_walk11.png");
+            getImage().mirrorHorizontally();
             frame = 1;
             return;
         }   
