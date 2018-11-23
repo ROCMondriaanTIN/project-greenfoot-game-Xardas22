@@ -1,4 +1,3 @@
-
 import greenfoot.*;
 
 /**
@@ -48,7 +47,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        
+        lookForCoins();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -249,6 +248,24 @@ public class Hero extends Mover {
     {
         boolean keyLeft = Greenfoot.isKeyDown("left");
         return keyLeft;        
+    }
+    
+    public void lookForCoins()
+    {
+        if(isTouching(CoinZilver.class))
+        {
+            removeTouching(CoinZilver.class);
+            new GreenfootSound("PickUpCoin.mp3");
+            // score += 1;
+        }
+        
+        if(isTouching(CoinGold.class))
+        {
+            removeTouching(CoinGold.class);
+            new GreenfootSound("PickUpCoin.mp3");
+            // score += 2;
+        }
+        
     }
     
 }

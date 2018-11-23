@@ -55,6 +55,22 @@ public class level1 extends World {
         addObject(hero, 650, 375);
         addObject(new Enemy(), 1150, 410);
         
+        CoinGold coinGold = new CoinGold();
+        CoinZilver coinZilver = new CoinZilver();
+        
+        addObject(coinZilver, 750, 375);
+        addObject(coinGold, 850, 375);
+        
+        CoinHUD coinHUD = new CoinHUD();
+        CrystalHUD crystalHUD = new CrystalHUD();
+        KeyHUD keyHUD = new KeyHUD();
+        LifeHUD lifeHUD = new LifeHUD();
+        
+        addObject(coinHUD, 100, 40);        // Deze moet rechts boven scherm
+        addObject(crystalHUD, 200, 40);     // Deze onder Key
+        addObject(keyHUD, 300, 40);         // Deze onder levens
+        addObject(lifeHUD, 400, 40);        // Deze moet links boven scherm
+        
         Music Music = new Music();
         
         addObject(Music, 19, 18);
