@@ -68,8 +68,8 @@ public class Hero extends Mover {
                 getWorld().removeObject(this);
                 return;
             }
-        }        
-        animateCounter ++;        
+        } 
+        animateCounter ++;
     }
 
     public void handleInput() {
@@ -89,8 +89,7 @@ public class Hero extends Mover {
             velocityX = 2;
             if(animateCounter % 3 == 0)
             {                
-                animateRight(); 
-                animateCounter = 0;
+                animateRight();                
             }
             
         }
@@ -98,9 +97,9 @@ public class Hero extends Mover {
     }
     
     public void animateStanding()
-    {
+    {        
         if(spacebar() == false && keyRight() == false && keyLeft() == false 
-        && drag == 0)
+        && velocityY == 0)
         {
             setImage("p1_stand.png");            
         }
