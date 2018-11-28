@@ -10,17 +10,7 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     
-    private GreenfootImage frame1 = new GreenfootImage("p1_walk01.png");
-    private GreenfootImage frame2 = new GreenfootImage("p1_walk02.png");
-    private GreenfootImage frame3 = new GreenfootImage("p1_walk03.png");
-    private GreenfootImage frame4 = new GreenfootImage("p1_walk04.png");
-    private GreenfootImage frame5 = new GreenfootImage("p1_walk05.png");
-    private GreenfootImage frame6 = new GreenfootImage("p1_walk06.png");
-    private GreenfootImage frame7 = new GreenfootImage("p1_walk07.png");
-    private GreenfootImage frame8 = new GreenfootImage("p1_walk08.png");
-    private GreenfootImage frame9 = new GreenfootImage("p1_walk09.png");
-    private GreenfootImage frame10 = new GreenfootImage("p1_walk10.png");
-    private GreenfootImage frame11 = new GreenfootImage("p1_walk11.png");
+    private int direction = 2;      // 1 = links, 2 = rechts
     
     private int frame = 1;
     
@@ -72,7 +62,8 @@ public class Hero extends Mover {
     }
 
     public void handleInput() {
-        animateStanding();        
+        animateStandingRight(); 
+        animateStandingLeft();
         if (spacebar() && onGround() == true) 
         {
             velocityY = -12;
@@ -82,31 +73,47 @@ public class Hero extends Mover {
         if (keyLeft()) 
         {
             velocityX = -2;
+            direction = 1;
             if(animateCounter % 3 == 0)
             {
                 animateLeft();
+                animateStandingLeft();
             }
         } 
         
         else if (keyRight()) 
         {
             velocityX = 2;
+            direction = 2;
             if(animateCounter % 3 == 0)
             {                
-                animateRight();                
+                animateRight();
+                animateStandingRight();
             }
             
         }
         
     }
     
-    public void animateStanding()
+    public void animateStandingRight()
     {        
         if(spacebar() == false && keyRight() == false && keyLeft() == false 
-        && velocityY == 0)
+        && velocityY == 0 && direction == 2)
         {
             setImage("p1_stand.png");            
         }
+        
+    }
+    
+    public void animateStandingLeft()
+    {        
+        if(spacebar() == false && keyRight() == false && keyLeft() == false 
+        && velocityY == 0 && direction == 1)
+        {
+            setImage("p1_stand.png");
+            getImage().mirrorHorizontally();
+        }
+        
     }
            
     public void animateRight()

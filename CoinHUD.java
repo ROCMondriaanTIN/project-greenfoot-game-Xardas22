@@ -6,13 +6,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CoinHUD extends Actor
+public class CoinHUD extends Mover
 {
     int score = 0;
     
     public void act() 
     {
-        setImage("HUD/hud_0.png");
+        
     }  
 
 }
