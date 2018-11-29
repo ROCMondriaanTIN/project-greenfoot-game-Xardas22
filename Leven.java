@@ -1,12 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class Leven extends Actor
+public class Leven extends Mover
 {
     
     public void act() 
     {
-        setImage("star.png");
+        applyVelocity();
+        setImage("star.png");        
     }    
     
 }

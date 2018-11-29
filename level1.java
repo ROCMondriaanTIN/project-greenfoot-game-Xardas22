@@ -24,8 +24,8 @@ public class level1 extends World {
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,6,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,80,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,79,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,102,102,102,102,102,102,102,102,-1,-1,-1,-1,-1,-1,-1,-1},
                 {136,136,136,136,136,136,136,136,136,103,103,103,103,103,103,103,103,136,136,136,136,136,136,136,136},
                 {135,135,135,135,135,135,135,135,135,103,103,103,103,103,103,103,103,135,135,135,135,135,135,135,135},
@@ -43,16 +43,16 @@ public class level1 extends World {
         Camera camera = new Camera(te);
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
-        Hero hero = new Hero("p1_stand.png");
-        Hero hero2 = new Hero("p2_stand.png");
-        Hero hero3 = new Hero("p3_stand.png");
+        Hero Xardas = new Hero("p1_stand.png");
+        Hero Talia = new Hero("p2_stand.png");
+        Hero Percy = new Hero("p3_stand.png");
 
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
-        camera.follow(hero);
+        camera.follow(Xardas);
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 650, 375);
+        addObject(Xardas, 650, 375);
         addObject(new Enemy(), 1150, 410);
 
         CoinGold coinGold = new CoinGold();
@@ -65,7 +65,7 @@ public class level1 extends World {
         addObject(coinGold, 825, 375);
         addObject(doorKey, 920, 375);
         addObject(crystalRed, 825, 275);
-        addObject(leven,910,270);
+        addObject(leven, 910, 270);
 
        
         CrystalHUD crystalHUD = new CrystalHUD();
@@ -85,7 +85,7 @@ public class level1 extends World {
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
         ce = new CollisionEngine(te, camera);
         // Toevoegen van de mover instantie of een extentie hiervan
-        ce.addCollidingMover(hero);
+        ce.addCollidingMover(Xardas);
 
         prepare();
     }

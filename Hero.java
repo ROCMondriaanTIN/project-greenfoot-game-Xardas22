@@ -53,7 +53,17 @@ public class Hero extends Mover {
     
     @Override
     public void act() {
-        handleInput();        
+        handleInput(); 
+        grabZilverCoin();
+        grabGoldCoin();
+        grabCrystalRed();
+        
+        if(scb == null)
+        {
+        scb = new ScoreBoard();
+        getWorld().addObject(scb, -10,-10);        
+        }
+        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -277,9 +287,9 @@ public class Hero extends Mover {
     {
         if(isTouching(CoinZilver.class))
         {
-            removeTouching(CoinZilver.class);
-            scb.updateCoinZilver();
             zilverCoin ++;
+            removeTouching(CoinZilver.class);
+            scb.updateCoinZilver();            
         }
         return zilverCoin;
     }
@@ -288,11 +298,22 @@ public class Hero extends Mover {
     {
         if(isTouching(CoinGold.class))
         {
-            removeTouching(CoinZilver.class);
-            scb.updateCoinGold();
             goldCoin += 2;
+            removeTouching(CoinGold.class);
+            scb.updateCoinGold();           
         }
         return goldCoin;
+    } 
+    
+    public boolean grabCrystalRed()
+    {
+        if(isTouching(CrystalRed.class))
+        {
+            removeTouching(CrystalRed.class);
+            scb.updateCrystalRed();
+            hasCrystalRed = true;
+        }
+        return true;
     }
     
 } 
