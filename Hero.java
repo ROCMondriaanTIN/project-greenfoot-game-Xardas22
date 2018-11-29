@@ -10,17 +10,25 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     
+    private int zilverCoin;
+    private int goldCoin;
+    public boolean greenKey = false;
+    
+    public static int levens = 2;
+    
     private int direction = 2;      // 1 = links, 2 = rechts
     
     private int frame = 1;
     
     private int animateCounter = 0;
     
-    private static int score;
-    
     public boolean hasKey;
     
-    private boolean hasCrystalRed;
+    private Hero hero1;
+    
+    ScoreBoard scb;
+    
+    private boolean hasCrystalRed = false;
     // boolean hasCrystalGreen;         Dit is voor eventueele easter egg
     // boolean hasCrystalBlue;
     // boolean hasCrystalYellow
@@ -45,8 +53,7 @@ public class Hero extends Mover {
     
     @Override
     public void act() {
-        handleInput();
-        lookForObjects();
+        handleInput();        
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -266,34 +273,26 @@ public class Hero extends Mover {
         return keyLeft;        
     }
     
-    public void lookForObjects()
+    public int grabZilverCoin()
     {
         if(isTouching(CoinZilver.class))
         {
             removeTouching(CoinZilver.class);
-            Greenfoot.playSound("PickUpCoin.mp3");
-            score += 1;
+            scb.updateCoinZilver();
+            zilverCoin ++;
         }
-        
-        if(isTouching(CoinGold.class))
-        {
-            removeTouching(CoinGold.class);
-            Greenfoot.playSound("PickUpCoin.mp3");            
-            score += 2;
-        }
-        
-        if(isTouching(DoorKey.class))
-        {
-            removeTouching(DoorKey.class);
-            boolean hasKey = true;
-        }
-        
-        if(isTouching(CrystalRed.class))
-        {
-            removeTouching(CrystalRed.class);
-            boolean hasCrystalRed = true;
-        }
-        
+        return zilverCoin;
     }
     
-}
+    public int grabGoldCoin()
+    {
+        if(isTouching(CoinGold.class))
+        {
+            removeTouching(CoinZilver.class);
+            scb.updateCoinGold();
+            goldCoin += 2;
+        }
+        return goldCoin;
+    }
+    
+} 

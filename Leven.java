@@ -1,14 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class CoinCounter2 extends CoinCounter1
+public class Leven extends Actor
 {
-    
-    
     
     public void act() 
     {
-        
-    } 
+        setImage("star.png");
+    }    
     
 }

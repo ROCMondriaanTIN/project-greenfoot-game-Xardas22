@@ -7,7 +7,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class level1 extends World {
 
     private CollisionEngine ce;
-
+    
+    public String activeWorld = "Level 1";
     /**
      * Constructor for objects of class MyWorld.
      *
@@ -58,18 +59,20 @@ public class level1 extends World {
         CoinZilver coinZilver = new CoinZilver();
         DoorKey doorKey = new DoorKey();
         CrystalRed crystalRed = new CrystalRed();
+        Leven leven = new Leven();
 
         addObject(coinZilver, 745, 375);
         addObject(coinGold, 825, 375);
         addObject(doorKey, 920, 375);
         addObject(crystalRed, 825, 275);
+        addObject(leven,910,270);
 
-        CoinHUD coinHUD = new CoinHUD();
+       
         CrystalHUD crystalHUD = new CrystalHUD();
         KeyHUD keyHUD = new KeyHUD();
         LifeHUD lifeHUD = new LifeHUD();
 
-        addObject(coinHUD, 100, 220);        // Deze moet rechts boven scherm
+        // addObject(coinHUD, 100, 220);        Deze moet rechts boven scherm
         addObject(crystalHUD, 100, 160);     // Deze onder Key
         addObject(keyHUD, 100, 100);         // Deze onder levens
         addObject(lifeHUD, 100, 40);         // Deze moet links boven scherm
@@ -98,7 +101,7 @@ public class level1 extends World {
      */
     private void prepare()
     {
-        
+                
     }
     
 }
