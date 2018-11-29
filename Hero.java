@@ -289,7 +289,8 @@ public class Hero extends Mover {
         {
             zilverCoin ++;
             removeTouching(CoinZilver.class);
-            scb.updateCoinZilver();            
+            scb.updateCoinZilver();
+            Greenfoot.playSound("PickUpCoin.mp3");
         }
         return zilverCoin;
     }
@@ -300,7 +301,8 @@ public class Hero extends Mover {
         {
             goldCoin += 2;
             removeTouching(CoinGold.class);
-            scb.updateCoinGold();           
+            scb.updateCoinGold(); 
+            Greenfoot.playSound("PickUpCoin.mp3");
         }
         return goldCoin;
     } 
