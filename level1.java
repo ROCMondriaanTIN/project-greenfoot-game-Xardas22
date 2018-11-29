@@ -56,9 +56,13 @@ public class level1 extends World {
 
         CoinGold coinGold = new CoinGold();
         CoinZilver coinZilver = new CoinZilver();
+        DoorKey doorKey = new DoorKey();
+        CrystalRed crystalRed = new CrystalRed();
 
-        addObject(coinZilver, 750, 375);
-        addObject(coinGold, 850, 375);
+        addObject(coinZilver, 745, 375);
+        addObject(coinGold, 825, 375);
+        addObject(doorKey, 920, 375);
+        addObject(crystalRed, 825, 275);
 
         CoinHUD coinHUD = new CoinHUD();
         CrystalHUD crystalHUD = new CrystalHUD();
@@ -68,7 +72,7 @@ public class level1 extends World {
         addObject(coinHUD, 100, 220);        // Deze moet rechts boven scherm
         addObject(crystalHUD, 100, 160);     // Deze onder Key
         addObject(keyHUD, 100, 100);         // Deze onder levens
-        addObject(lifeHUD, 100, 40);        // Deze moet links boven scherm
+        addObject(lifeHUD, 100, 40);         // Deze moet links boven scherm
 
         Music Music = new Music();
 
@@ -94,5 +98,7 @@ public class level1 extends World {
      */
     private void prepare()
     {
+        
     }
+    
 }

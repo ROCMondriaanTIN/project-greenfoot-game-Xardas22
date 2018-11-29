@@ -8,8 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class CoinHUD extends Mover
 {
-    int score = 0;
-    
+   
     public void act() 
     {
         

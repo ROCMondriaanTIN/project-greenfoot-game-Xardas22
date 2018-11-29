@@ -15,6 +15,15 @@ public class Hero extends Mover {
     private int frame = 1;
     
     private int animateCounter = 0;
+    
+    private static int score;
+    
+    public boolean hasKey;
+    
+    private boolean hasCrystalRed;
+    // boolean hasCrystalGreen;         Dit is voor eventueele easter egg
+    // boolean hasCrystalBlue;
+    // boolean hasCrystalYellow
 
     public Hero(String image) {
         super();
@@ -37,7 +46,7 @@ public class Hero extends Mover {
     @Override
     public void act() {
         handleInput();
-        lookForCoins();
+        lookForObjects();
         velocityX *= drag;
         velocityY += acc;
         if (velocityY > gravity) {
@@ -257,20 +266,32 @@ public class Hero extends Mover {
         return keyLeft;        
     }
     
-    public void lookForCoins()
+    public void lookForObjects()
     {
         if(isTouching(CoinZilver.class))
         {
             removeTouching(CoinZilver.class);
-            new GreenfootSound("PickUpCoin.mp3");
-            // score += 1;
+            Greenfoot.playSound("PickUpCoin.mp3");
+            score += 1;
         }
         
         if(isTouching(CoinGold.class))
         {
             removeTouching(CoinGold.class);
-            new GreenfootSound("PickUpCoin.mp3");
-            // score += 2;
+            Greenfoot.playSound("PickUpCoin.mp3");            
+            score += 2;
+        }
+        
+        if(isTouching(DoorKey.class))
+        {
+            removeTouching(DoorKey.class);
+            boolean hasKey = true;
+        }
+        
+        if(isTouching(CrystalRed.class))
+        {
+            removeTouching(CrystalRed.class);
+            boolean hasCrystalRed = true;
         }
         
     }

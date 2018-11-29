@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CrystalHUD extends Actor
+public class CrystalHUD extends Mover
 {
     /**
      * Act - do whatever the CrystalHUD wants to do. This method is called whenever
