@@ -12,7 +12,7 @@ public class Hero extends Mover {
     
     private int zilverCoin;
     private int goldCoin;
-    public boolean greenKey = false;
+    public boolean greenKey;
     
     public static int levens = 2;
     
@@ -22,7 +22,7 @@ public class Hero extends Mover {
     
     private int animateCounter = 0;
     
-    public boolean hasKey;
+    public boolean hasKeyGreen = false;
     
     // private Hero hero1;
     
@@ -57,6 +57,7 @@ public class Hero extends Mover {
         grabZilverCoin();
         grabGoldCoin();
         grabCrystalRed();
+        grabKey();
         
         if(scb == null)
         {
@@ -284,7 +285,7 @@ public class Hero extends Mover {
         return keyLeft;        
     }
     
-    public int grabZilverCoin()
+    public void grabZilverCoin()
     {
         if(isTouching(CoinZilver.class))
         {            
@@ -293,10 +294,10 @@ public class Hero extends Mover {
             Greenfoot.playSound("PickUpCoin.mp3");
             zilverCoin ++;
         }
-        return zilverCoin;
+        
     }
     
-    public int grabGoldCoin()
+    public void grabGoldCoin()
     {
         if(isTouching(CoinGold.class))
         {            
@@ -305,10 +306,10 @@ public class Hero extends Mover {
             Greenfoot.playSound("PickUpCoin.mp3");
             goldCoin += 2;
         }
-        return goldCoin;
+        
     } 
     
-    public boolean grabCrystalRed()
+    public void grabCrystalRed()
     {
         if(isTouching(CrystalRed.class))
         {
@@ -316,7 +317,18 @@ public class Hero extends Mover {
             scb.updateCrystalRed();
             hasCrystalRed = true;            
         }
-        return true;
-    }        
+        
+    }    
+    
+    public void grabKey()
+    {
+        if(isTouching(DoorKeyGreen.class))
+        {
+        removeTouching(DoorKeyGreen.class);        
+        scb.updateKeyGreen();
+        hasKeyGreen = true;
+        }
+        
+    }    
     
 } 

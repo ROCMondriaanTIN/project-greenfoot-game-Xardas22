@@ -10,24 +10,24 @@ public class ScoreBoard extends Actor
     private int xPosZilverCoin = 950;
     private int xPosGoldCoin = 950;
     private int xPosCrystalRed = 100;
-    private boolean xPosGreenKey = false;
+    private int xPosGreenKey = 100;
     
     public void act() 
     {
         
     }
     
-    public void update()
-    {
-        if(score == 20)
-        {
-            leven ++;
-            getWorld().addObject(new Leven(), xPosLeven, 40);
-            xPosLeven += 50;
-            score = 0;            
-        }
-        
-    } 
+//    public void updateLeven()
+//    {
+//        if(score == 20)
+//        {
+//            leven ++;
+//            getWorld().addObject(new Leven(), xPosLeven, 40);
+//            xPosLeven += 50;
+//            score = 0;            
+//        }
+//        
+//    } 
     
     public void updateCoinZilver()
     {
@@ -35,7 +35,7 @@ public class ScoreBoard extends Actor
         // Methode is true dus in CoinZilver.class word applyVelocity(); uitgevoerd. Zeflde geld voor de rest.
         getWorld().addObject(new CoinZilver(true), xPosZilverCoin, 60); 
         xPosZilverCoin -= 20;
-        update();
+        // updateLeven();
     }
     
     public void updateCoinGold()
@@ -43,13 +43,17 @@ public class ScoreBoard extends Actor
         score += 2;
         getWorld().addObject(new CoinGold(true), xPosGoldCoin, 100);
         xPosGoldCoin -= 20;
-        update();
+        // updateLeven();
     }
     
     public void updateCrystalRed()
     {
-        getWorld().addObject(new CrystalRed(true), xPosCrystalRed, 160);
-        update();
+        getWorld().addObject(new CrystalRed(true), xPosCrystalRed, 160);        
+    }
+    
+    public void updateKeyGreen()
+    {
+        getWorld().addObject(new DoorKeyGreen(true), xPosGreenKey, 100);
     }
     
 }

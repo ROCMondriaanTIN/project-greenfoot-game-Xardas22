@@ -13,7 +13,8 @@ Je geeft de methode de waarde true aan in ScoreBoard.class zodat applyVelocity()
     
     public CoinGold()
     {
-        
+        super();
+        setImage("coinGold.png");
     }
     
     public CoinGold(boolean onScreen)
