@@ -24,11 +24,11 @@ public class Hero extends Mover {
     
     public boolean hasKey;
     
-    private Hero hero1;
+    // private Hero hero1;
     
     ScoreBoard scb;
     
-    private boolean hasCrystalRed = false;
+    private static boolean hasCrystalRed;
     // boolean hasCrystalGreen;         Dit is voor eventueele easter egg
     // boolean hasCrystalBlue;
     // boolean hasCrystalYellow
@@ -105,6 +105,7 @@ public class Hero extends Mover {
                 animateLeft();
                 animateStandingLeft();
             }
+            
         } 
         
         else if (keyRight()) 
@@ -286,11 +287,11 @@ public class Hero extends Mover {
     public int grabZilverCoin()
     {
         if(isTouching(CoinZilver.class))
-        {
-            zilverCoin ++;
+        {            
             removeTouching(CoinZilver.class);
             scb.updateCoinZilver();
             Greenfoot.playSound("PickUpCoin.mp3");
+            zilverCoin ++;
         }
         return zilverCoin;
     }
@@ -298,11 +299,11 @@ public class Hero extends Mover {
     public int grabGoldCoin()
     {
         if(isTouching(CoinGold.class))
-        {
-            goldCoin += 2;
+        {            
             removeTouching(CoinGold.class);
             scb.updateCoinGold(); 
             Greenfoot.playSound("PickUpCoin.mp3");
+            goldCoin += 2;
         }
         return goldCoin;
     } 
@@ -313,9 +314,9 @@ public class Hero extends Mover {
         {
             removeTouching(CrystalRed.class);
             scb.updateCrystalRed();
-            hasCrystalRed = true;
+            hasCrystalRed = true;            
         }
         return true;
-    }
+    }        
     
 } 

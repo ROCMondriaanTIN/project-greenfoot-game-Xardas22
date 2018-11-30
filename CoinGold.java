@@ -1,19 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class CoinGold here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class CoinGold extends Mover
+
+/* 
+Dit zorgt er voor dat een Coin/collectable op z'n plek blijft staan als je het oppakt.
+Je geeft de methode de waarde true aan in ScoreBoard.class zodat applyVelocity(); word toegepast. 
+*/
+
 {
-    /**
-     * Act - do whatever the CoinGold wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean alwaysOnScreen = false;
+    
+    public CoinGold()
+    {
+        
+    }
+    
+    public CoinGold(boolean onScreen)
+    {
+        this.alwaysOnScreen = onScreen;
+    }
+    
     public void act() 
     {
-        applyVelocity();
-    }    
+        if(alwaysOnScreen == false)
+        {
+            applyVelocity();
+        }
+        
+    }   
+    
 }

@@ -1,19 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class CoinZilver here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class CoinZilver extends Mover
+
+/* 
+Dit zorgt er voor dat een Coin/collectable op z'n plek blijft staan als je het oppakt.
+Je geeft de methode de waarde true aan in ScoreBoard.class zodat applyVelocity(); word toegepast. 
+*/
+
 {
-    /**
-     * Act - do whatever the CoinZilver wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean alwaysOnScreen = false;
+    
+    public CoinZilver()
+    {
+  
+    }
+    
+    public CoinZilver(boolean onScreen)
+    {
+        this.alwaysOnScreen = onScreen;
+    }
+        
     public void act() 
     {
-        applyVelocity();
-    }    
+        if(alwaysOnScreen == false)
+        {
+            applyVelocity();
+        }
+        
+    }  
+    
 }

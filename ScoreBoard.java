@@ -7,14 +7,14 @@ public class ScoreBoard extends Actor
     public static int leven = 2;
     private int score = 0;
     private int xPosLeven = 20;
-    private int xPosGoldCoin = 750;
-    private int xPosZilverCoin = 750;
-    private int xPosCrystalRed = 750;
+    private int xPosZilverCoin = 950;
+    private int xPosGoldCoin = 950;
+    private int xPosCrystalRed = 100;
     private boolean xPosGreenKey = false;
     
     public void act() 
     {
-        update();
+        
     }
     
     public void update()
@@ -32,7 +32,8 @@ public class ScoreBoard extends Actor
     public void updateCoinZilver()
     {
         score += 1;
-        getWorld().addObject(new CoinZilver(),xPosZilverCoin, 60);
+        // Methode is true dus in CoinZilver.class word applyVelocity(); uitgevoerd. Zeflde geld voor de rest.
+        getWorld().addObject(new CoinZilver(true), xPosZilverCoin, 60); 
         xPosZilverCoin -= 20;
         update();
     }
@@ -40,14 +41,14 @@ public class ScoreBoard extends Actor
     public void updateCoinGold()
     {
         score += 2;
-        getWorld().addObject(new CoinZilver(),xPosGoldCoin, 100);
+        getWorld().addObject(new CoinGold(true), xPosGoldCoin, 100);
         xPosGoldCoin -= 20;
         update();
     }
     
     public void updateCrystalRed()
     {
-        getWorld().addObject(new CrystalRed(), xPosCrystalRed, 140);
+        getWorld().addObject(new CrystalRed(true), xPosCrystalRed, 160);
         update();
     }
     

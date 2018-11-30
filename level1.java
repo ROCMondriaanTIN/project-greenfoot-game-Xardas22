@@ -24,9 +24,9 @@ public class level1 extends World {
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,6,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
-                {-1,-1,-1,-1,-1,-1,-1,-1,-1,102,102,102,102,102,102,102,102,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,-1,5,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
+                {-1,-1,-1,-1,-1,-1,-1,120,120,120,120,120,120,120,120,120,120,120,120,120,-1,-1,-1,-1,-1},
                 {136,136,136,136,136,136,136,136,136,103,103,103,103,103,103,103,103,136,136,136,136,136,136,136,136},
                 {135,135,135,135,135,135,135,135,135,103,103,103,103,103,103,103,103,135,135,135,135,135,135,135,135},
                 {135,135,135,135,135,135,135,135,135,103,103,103,103,103,103,103,103,135,135,135,135,135,135,135,135},
@@ -52,8 +52,7 @@ public class level1 extends World {
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(Xardas, 650, 375);
-        addObject(new Enemy(), 1150, 410);
+        addObject(Xardas, 530, 375);        
 
         CoinGold coinGold = new CoinGold();
         CoinZilver coinZilver = new CoinZilver();
@@ -68,12 +67,12 @@ public class level1 extends World {
         addObject(leven, 910, 270);
 
        
-        CrystalHUD crystalHUD = new CrystalHUD();
+        // CrystalHUD crystalHUD = new CrystalHUD();
         KeyHUD keyHUD = new KeyHUD();
         LifeHUD lifeHUD = new LifeHUD();
 
         // addObject(coinHUD, 100, 220);        Deze moet rechts boven scherm
-        addObject(crystalHUD, 100, 160);     // Deze onder Key
+        // addObject(crystalHUD, 100, 160);     Deze onder Key
         addObject(keyHUD, 100, 100);         // Deze onder levens
         addObject(lifeHUD, 100, 40);         // Deze moet links boven scherm
 
@@ -101,7 +100,7 @@ public class level1 extends World {
      */
     private void prepare()
     {
-                
+
     }
     
 }
