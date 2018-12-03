@@ -6,7 +6,7 @@ public class ScoreBoard extends Actor
     
     public static int leven = 2;
     private int score = 0;
-    private int xPosLeven = 20;
+    private int xPosLeven = 100;
     private int xPosZilverCoin = 950;
     private int xPosGoldCoin = 950;
     private int xPosCrystalRed = 100;
@@ -32,7 +32,7 @@ public class ScoreBoard extends Actor
     public void updateCoinZilver()
     {
         score += 1;
-        // Methode is true dus in CoinZilver.class word applyVelocity(); uitgevoerd. Zeflde geld voor de rest.
+        // Methode is true dus in CoinZilver.class word applyVelocity(); uitgevoerd. Zelfde geld voor de rest.
         getWorld().addObject(new CoinZilver(true), xPosZilverCoin, 60); 
         xPosZilverCoin -= 20;
         // updateLeven();

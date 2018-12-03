@@ -75,7 +75,7 @@ public class level1 extends World {
 
         Music Music = new Music();
 
-        addObject(Music, 19, 18);
+        addObject(Music, 30, 30);
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.

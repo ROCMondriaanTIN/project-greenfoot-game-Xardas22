@@ -315,6 +315,7 @@ public class Hero extends Mover {
         {
             removeTouching(CrystalRed.class);
             scb.updateCrystalRed();
+            Greenfoot.playSound("CrystalPickUp.mp3");
             hasCrystalRed = true;            
         }
         
