@@ -22,7 +22,10 @@ public class Hero extends Mover {
     
     private int animateCounter = 0;
     
-    public boolean hasKeyGreen = false;
+    public static boolean hasKeyGreen = false;
+    public static boolean hasKeyBlue = false;
+    public static boolean hasKeyRed = false;
+    public static boolean hasKeyYellow = false;
     
     // private Hero hero1;
     
@@ -56,8 +59,13 @@ public class Hero extends Mover {
         handleInput(); 
         grabZilverCoin();
         grabGoldCoin();
+        
         grabCrystalRed();
-        grabKey();
+        
+        grabKeyGreen();
+        grabKeyBlue();
+        grabKeyRed();
+        grabKeyYellow();
         
         if(scb == null)
         {
@@ -321,13 +329,46 @@ public class Hero extends Mover {
         
     }    
     
-    public void grabKey()
+    public void grabKeyGreen()
     {
         if(isTouching(DoorKeyGreen.class))
         {
         removeTouching(DoorKeyGreen.class);        
         scb.updateKeyGreen();
         hasKeyGreen = true;
+        }
+        
+    }   
+    
+    public void grabKeyBlue()
+    {
+        if(isTouching(doorKeyBlue.class))
+        {
+        removeTouching(doorKeyBlue.class);        
+        scb.updateKeyGreen();
+        hasKeyBlue = true;
+        }
+        
+    }   
+    
+    public void grabKeyRed()
+    {
+        if(isTouching(doorKeyRed.class))
+        {
+        removeTouching(doorKeyRed.class);        
+        scb.updateKeyGreen();
+        hasKeyRed = true;
+        }
+        
+    }   
+    
+    public void grabKeyYellow()
+    {
+        if(isTouching(doorKeyYellow.class))
+        {
+        removeTouching(doorKeyYellow.class);        
+        scb.updateKeyGreen();
+        hasKeyYellow = true;
         }
         
     }    

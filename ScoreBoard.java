@@ -6,11 +6,19 @@ public class ScoreBoard extends Actor
     
     public static int leven = 2;
     private int score = 0;
+    
     private int xPosLeven = 100;
     private int xPosZilverCoin = 950;
     private int xPosGoldCoin = 950;
+    
+    
     private int xPosCrystalRed = 100;
+    
+    
     private int xPosGreenKey = 100;
+    private int xPosBlueKey = 100;
+    private int xPosRedKey = 100;
+    private int xPosYellowKey = 100;
     
     public void act() 
     {
@@ -54,6 +62,21 @@ public class ScoreBoard extends Actor
     public void updateKeyGreen()
     {
         getWorld().addObject(new DoorKeyGreen(true), xPosGreenKey, 100);
+    }
+    
+    public void updateKeyBlue()
+    {
+        getWorld().addObject(new DoorKeyGreen(true), xPosBlueKey, 100);
+    }
+    
+    public void updateKeyRed()
+    {
+        getWorld().addObject(new DoorKeyGreen(true), xPosRedKey, 100);
+    }
+    
+    public void updateKeyYellow()
+    {
+        getWorld().addObject(new DoorKeyGreen(true), xPosYellowKey, 100);
     }
     
 }

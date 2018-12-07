@@ -58,6 +58,9 @@ public class level1 extends World {
         CoinZilver coinZilver = new CoinZilver();
         DoorKeyGreen doorKeyGreen = new DoorKeyGreen();
         CrystalRed crystalRed = new CrystalRed();
+        
+        Door door = new Door();
+        addObject(door, 1100, 365);
 
         addObject(coinZilver, 745, 375);
         addObject(coinGold, 825, 375);
@@ -97,7 +100,7 @@ public class level1 extends World {
      */
     private void prepare()
     {
-
+        
     }
     
 }
