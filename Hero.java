@@ -335,6 +335,7 @@ public class Hero extends Mover {
         {
         removeTouching(DoorKeyGreen.class);        
         scb.updateKeyGreen();
+        Greenfoot.playSound("DOOM.mp3");
         hasKeyGreen = true;
         }
         
@@ -346,6 +347,7 @@ public class Hero extends Mover {
         {
         removeTouching(doorKeyBlue.class);        
         scb.updateKeyGreen();
+        Greenfoot.playSound("DOOM.mp3");
         hasKeyBlue = true;
         }
         
@@ -357,6 +359,7 @@ public class Hero extends Mover {
         {
         removeTouching(doorKeyRed.class);        
         scb.updateKeyGreen();
+        Greenfoot.playSound("DOOM.mp3");
         hasKeyRed = true;
         }
         
@@ -368,6 +371,7 @@ public class Hero extends Mover {
         {
         removeTouching(doorKeyYellow.class);        
         scb.updateKeyGreen();
+        Greenfoot.playSound("DOOM.mp3");
         hasKeyYellow = true;
         }
         

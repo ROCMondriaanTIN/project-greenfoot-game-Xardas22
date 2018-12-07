@@ -13,7 +13,12 @@ public class Door extends Mover
     
     public void act() 
     {
-        applyVelocity();        
+        applyVelocity(); 
+//        if(Hero.hasKeyGreen == true && isTouching(Door.class))
+//        {
+//            Greenfoot.setWorld(new level);
+//        }
+//        
     }   
     
 }

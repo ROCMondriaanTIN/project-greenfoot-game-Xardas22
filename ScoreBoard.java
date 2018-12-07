@@ -5,7 +5,7 @@ public class ScoreBoard extends Actor
 {
     
     public static int leven = 2;
-    private int score = 0;
+    public static int score = 0;
     
     private int xPosLeven = 100;
     private int xPosZilverCoin = 950;
