@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class CrystalRed extends Mover
+public class crystalGreen extends Mover
 
 /* 
 Dit zorgt er voor dat een Coin/collectable op z'n plek blijft staan als je het oppakt.
@@ -11,12 +11,12 @@ Je geeft de methode de waarde true aan in ScoreBoard.class zodat applyVelocity()
 {
     boolean alwaysOnScreen = false;
     
-    public CrystalRed()
+    public crystalGreen()
     {
         
     }
     
-    public CrystalRed(boolean onScreen)
+    public crystalGreen(boolean onScreen)
     {
         this.alwaysOnScreen = onScreen;
     }
@@ -28,6 +28,6 @@ Je geeft de methode de waarde true aan in ScoreBoard.class zodat applyVelocity()
             applyVelocity();
         }
         
-    }
+    }   
     
 }

@@ -12,8 +12,7 @@ public class Hero extends Mover {
     
     private int zilverCoin;
     private int goldCoin;
-    public boolean greenKey;
-    
+        
     public static int levens = 2;
     
     private int direction = 2;      // 1 = links, 2 = rechts
@@ -32,9 +31,9 @@ public class Hero extends Mover {
     ScoreBoard scb;
     
     private static boolean hasCrystalRed;
-    // boolean hasCrystalGreen;         Dit is voor eventueele easter egg
-    // boolean hasCrystalBlue;
-    // boolean hasCrystalYellow
+    private static boolean hasCrystalGreen;         
+    private static boolean hasCrystalBlue;
+    private static boolean hasCrystalYellow;
 
     public Hero(String image) {
         super();
@@ -61,11 +60,16 @@ public class Hero extends Mover {
         grabGoldCoin();
         
         grabCrystalRed();
+        grabCrystalGreen();
+        grabCrystalYellow();
+        grabCrystalBlue();
         
         grabKeyGreen();
         grabKeyBlue();
         grabKeyRed();
         grabKeyYellow();
+        
+        grabLeven();
         
         if(scb == null)
         {
@@ -328,6 +332,42 @@ public class Hero extends Mover {
         }
         
     }    
+
+    public void grabCrystalGreen()
+    {
+        if(isTouching(crystalGreen.class))
+        {
+            removeTouching(crystalGreen.class);
+            scb.updateCrystalGreen();
+            Greenfoot.playSound("CrystalPickUp.mp3");
+            hasCrystalGreen = true;
+        }
+        
+    }
+    
+    public void grabCrystalBlue()
+    {
+        if(isTouching(crystalBlue.class))
+        {
+            removeTouching(crystalGreen.class);
+            scb.updateCrystalBlue();
+            Greenfoot.playSound("CrystalPickUp.mp3");
+            hasCrystalGreen = true;
+        }
+        
+    }
+    
+    public void grabCrystalYellow()
+    {
+        if(isTouching(crystalYellow.class))
+        {
+            removeTouching(crystalGreen.class);
+            scb.updateCrystalYellow();
+            Greenfoot.playSound("CrystalPickUp.mp3");
+            hasCrystalGreen = true;
+        }
+        
+    }
     
     public void grabKeyGreen()
     {
@@ -375,6 +415,17 @@ public class Hero extends Mover {
         hasKeyYellow = true;
         }
         
-    }    
+    }   
+    
+    public void grabLeven()
+    {
+        if(isTouching(Leven.class))
+        {
+            removeTouching(Leven.class);
+            scb.updateLeven();
+            Greenfoot.playSound("1UP.mp3");            
+        }
+        
+    }
     
 } 

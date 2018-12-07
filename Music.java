@@ -10,9 +10,9 @@ public class Music extends Actor
 {
     
         
-        GreenfootSound myMusic = new GreenfootSound("Skyrim.mp3");
+    GreenfootSound myMusic = new GreenfootSound("Skyrim.mp3");
         
-        boolean firstTurn = true;
+    boolean firstTurn = true;
         
     
     
@@ -41,7 +41,9 @@ public class Music extends Actor
                 myMusic.playLoop();
                 setImage("Pause.png");
             }
+            
         }
         
-    }    
+    }  
+    
 }
