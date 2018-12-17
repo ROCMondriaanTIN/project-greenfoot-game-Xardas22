@@ -71,8 +71,8 @@ public class level1 extends World {
         // KeyHUD  keyHUD = new KeyHUD();
         // LifeHUD  lifeHUD = new LifeHUD();
 
-        // addObject(coinHUD, 100, 220);        Deze moet rechts boven scherm
-        // addObject(crystalHUD, 100, 160);     Deze onder Key
+        // addObject(coinHUD, 100, 220);        // Deze moet rechts boven scherm
+        // addObject(crystalHUD, 100, 160);     // Deze onder Key
         // addObject(keyHUD, 100, 100);         // Deze onder levens
         // addObject(lifeHUD, 165, 40);         // Deze moet links boven scherm
 
@@ -100,7 +100,7 @@ public class level1 extends World {
      */
     private void prepare()
     {
-        
+
     }
     
 }

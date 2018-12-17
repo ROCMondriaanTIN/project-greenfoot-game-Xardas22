@@ -11,9 +11,7 @@ public class Hero extends Mover {
     private final double drag;
     
     private int zilverCoin;
-    private int goldCoin;
-        
-    public static int levens = 2;
+    private int goldCoin;        
     
     private int direction = 2;      // 1 = links, 2 = rechts
     
@@ -45,9 +43,14 @@ public class Hero extends Mover {
 
     public boolean onGround()
     {
-        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
-        Tile tile = (Tile) under;
-        return tile != null && tile.isSolid == true;
+//        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
+//        Tile tile = (Tile) under;
+//        return tile != null && tile.isSolid == true;
+        Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
+        Tile tile1 = (Tile) underLeft;
+        Tile tile2 = (Tile) underRight;
+        return (tile1 != null && tile1.isSolid) || (tile2 != null && tile2.isSolid);
     }
     
     
@@ -68,8 +71,7 @@ public class Hero extends Mover {
         grabKeyBlue();
         grabKeyRed();
         grabKeyYellow();
-        
-        grabLeven();
+                
         
         if(scb == null)
         {
@@ -416,16 +418,5 @@ public class Hero extends Mover {
         }
         
     }   
-    
-    public void grabLeven()
-    {
-        if(isTouching(Leven.class))
-        {
-            removeTouching(Leven.class);
-            scb.updateLeven();
-            Greenfoot.playSound("1UP.mp3");            
-        }
-        
-    }
     
 } 
