@@ -101,6 +101,8 @@ public class Level1 extends World {
     private void prepare()
     {
 
+        CoinZilver coinZilver = new CoinZilver();
+        addObject(coinZilver,720,375);       
     }
     
 }
