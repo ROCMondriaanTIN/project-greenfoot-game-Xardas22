@@ -132,24 +132,14 @@ public class Hero extends Mover {
         {
             velocityX = -2;
             direction = 1;
-            if(animateCounter % 3 == 0)
-            {
-                animateStandingLeft();
-                animator();
-            }
-            
+            animator();
         } 
         
         else if (keyRight()) 
         {
             velocityX = 2;
             direction = 2;
-            if(animateCounter % 3 == 0)
-            {                
-                animateStandingRight();
-                animator();
-            }
-            
+            animator();
         }
         
     }
