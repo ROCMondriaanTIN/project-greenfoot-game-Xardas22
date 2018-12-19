@@ -2,14 +2,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
 public class Collectables extends Mover
+
+/* 
+Dit zorgt er voor dat een collectable op z'n plek blijft staan als je het oppakt.
+Je geeft de methode de waarde (die ergens in Scoreboard.java staat) true aan in ScoreBoard.class zodat applyVelocity(); word toegepast. 
+*/
+
 {
     
     
 //    public enum collectables
 //    {
-//        coinZilver,
-//        coinGold,
-//        
 //        crystalRed, 
 //        crystalGreen, 
 //        crystalBlue, 
@@ -18,15 +21,19 @@ public class Collectables extends Mover
 //        keyRed,
 //        keyGreen,
 //        keyBlue,
-//        keyYellow,
-//        
-//        levens,
+//        keyYellow,    
 //    }
     
+    boolean alwaysOnScreen =  false;
     
     public Collectables()
     {
         super();
+    }
+    
+    public Collectables(boolean onScreen)
+    {
+        this.alwaysOnScreen = onScreen;
     }
     
     public Collectables(String image)
@@ -38,7 +45,11 @@ public class Collectables extends Mover
     
     public void act() 
     {
-        applyVelocity();
+        if(alwaysOnScreen == false)
+        {
+            applyVelocity();
+        }
+        
     }   
     
 }
