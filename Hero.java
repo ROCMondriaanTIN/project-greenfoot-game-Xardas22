@@ -14,10 +14,14 @@ public class Hero extends Mover {
     private int goldCoin;        
     
     private int direction = 2;      // 1 = links, 2 = rechts
-    
-    private int frame = 1;
+       
     
     private int animateCounter = 0;
+    
+    private int maxImages = 11;
+    private int maxAnimateSpeed = 3;
+    private int frame = 1;
+    private int animationSpeed = 0;
     
     public static boolean hasKeyGreen = false;
     public static boolean hasKeyBlue = false;
@@ -72,9 +76,9 @@ public class Hero extends Mover {
         grabKeyRed();
         grabKeyYellow();
         
-        if(isTouching(WaterTile.class))
+        if(isTouching(WaterTile.class) || isTouching(Enemy.class))        
         {
-            setLocation(530, 375);
+            setLocation(530, 375);            
         }
                 
         
@@ -90,21 +94,34 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-
-        for (Actor enemy : getIntersectingObjects(Enemy.class)) {
-            if (enemy != null) {
-                getWorld().removeObject(this);
-                return;
-            }
+  
+        // animateCounter ++;
+        
+        animationSpeed ++;
+    }
+    
+    public void animator()
+    {
+        setImage("p1_walk" + frame + ".png");
+        
+        if(direction == 1)
+        {
+            getImage().mirrorHorizontally();
         }
         
-        for (Actor waterTile : getIntersectingObjects(WaterTile.class)) {
-            if (waterTile != null) {
-                getWorld().removeObject(this);
-                return;
-            }
-        } 
-        animateCounter ++;
+        if(animationSpeed > maxAnimateSpeed)
+        {
+           animationSpeed = 0;
+           
+           frame ++;
+           
+           if(frame > maxImages)
+           {
+               frame = 1;
+           }
+           
+        }
+        
     }
 
     public void handleInput() {
@@ -122,8 +139,9 @@ public class Hero extends Mover {
             direction = 1;
             if(animateCounter % 3 == 0)
             {
-                animateLeft();
+                // animateLeft();
                 animateStandingLeft();
+                animator();
             }
             
         } 
@@ -134,8 +152,9 @@ public class Hero extends Mover {
             direction = 2;
             if(animateCounter % 3 == 0)
             {                
-                animateRight();
+                // animateRight();
                 animateStandingRight();
+                animator();
             }
             
         }
@@ -161,121 +180,6 @@ public class Hero extends Mover {
             getImage().mirrorHorizontally();
         }
         
-    }
-           
-    public void animateRight()
-    {
-        if(frame == 1)
-        {
-            setImage("p1_walk01.png");
-        }
-        else if(frame == 2)
-        {
-            setImage("p1_walk02.png");
-        }
-         else if(frame == 3)
-        {
-            setImage("p1_walk03.png");
-        } 
-         else if(frame == 4)
-        {
-            setImage("p1_walk04.png");
-        } 
-         else if(frame == 5)
-        {
-            setImage("p1_walk05.png");
-        } 
-         else if(frame == 6)
-        {
-            setImage("p1_walk06.png");
-        } 
-        else if(frame == 7)
-        {
-            setImage("p1_walk07.png");
-        }
-         else if(frame == 8)
-        {
-            setImage("p1_walk08.png");
-        }
-         else if(frame == 9)
-        {
-            setImage("p1_walk09.png");
-        }
-         else if(frame == 10)
-        {
-            setImage("p1_walk10.png");
-        }
-         else if(frame == 11)
-        {
-            setImage("p1_walk11.png");
-            frame = 1;
-            return;
-        }   
-        
-        frame ++;
-    }
-    
-    public void animateLeft()
-    {
-        if(frame == 1)
-        {
-            setImage("p1_walk01.png");
-            getImage().mirrorHorizontally();
-        }
-        else if(frame == 2)
-        {
-            setImage("p1_walk02.png");
-            getImage().mirrorHorizontally();
-        }
-         else if(frame == 3)
-        {
-            setImage("p1_walk03.png");
-            getImage().mirrorHorizontally();
-        } 
-         else if(frame == 4)
-        {
-            setImage("p1_walk04.png");
-            getImage().mirrorHorizontally();
-        } 
-         else if(frame == 5)
-        {
-            setImage("p1_walk05.png");
-            getImage().mirrorHorizontally();
-        } 
-         else if(frame == 6)
-        {
-            setImage("p1_walk06.png");
-            getImage().mirrorHorizontally();
-        } 
-         else if(frame == 7)
-        {
-            setImage("p1_walk07.png");
-            getImage().mirrorHorizontally();
-        }
-         else if(frame == 8)
-        {
-            setImage("p1_walk08.png");
-            getImage().mirrorHorizontally();
-        }
-         else if(frame == 9)
-        {
-            setImage("p1_walk09.png");
-            getImage().mirrorHorizontally();
-        }
-         else if(frame == 10)
-        {
-            setImage("p1_walk10.png");
-            getImage().mirrorHorizontally();
-        }
-         else if(frame == 11)
-        {
-            setImage("p1_walk11.png");
-            getImage().mirrorHorizontally();
-            frame = 1;
-            return;
-        }   
-        
-        frame ++;
     }
 
     public int getWidth() {

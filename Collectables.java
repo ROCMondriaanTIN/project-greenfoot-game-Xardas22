@@ -15,7 +15,9 @@ public class Collectables extends Mover
         keyRed,
         keyGreen,
         keyBlue,
-        keyYellow
+        keyYellow,
+        
+        levens,
     }
     
     public void act() 

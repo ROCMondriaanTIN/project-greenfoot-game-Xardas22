@@ -25,7 +25,7 @@ public class ScoreBoard extends Actor
             leven ++;
             Greenfoot.playSound("1UP.mp3");
             getWorld().addObject(new Leven(true), xPosLeven, 40);
-            xPosLeven += 50;                        
+            xPosLeven += 50; 
         }
         return score = 0;
     } 

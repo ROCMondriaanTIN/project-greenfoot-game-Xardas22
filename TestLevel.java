@@ -4,7 +4,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  *
  * @author R. Springer
  */
-public class Level1 extends World {
+public class TestLevel extends World {
 
     private CollisionEngine ce;
     
@@ -13,7 +13,7 @@ public class Level1 extends World {
      * Constructor for objects of class MyWorld.
      *
      */
-    public Level1() {
+    public TestLevel() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1000, 800, 1, false);
         this.setBackground("bg.png");
@@ -102,7 +102,7 @@ public class Level1 extends World {
     {
 
         CoinZilver coinZilver = new CoinZilver();
-        addObject(coinZilver,720,375);       
+        addObject(coinZilver,700,375);       
     }
     
 }
