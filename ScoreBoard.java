@@ -54,7 +54,7 @@ public class ScoreBoard extends Actor
     
     public void updateCrystalBlue()
     {
-        getWorld().addObject(new crystalBlue(true), xPosCrystal, 160);        
+        getWorld().addObject(new crystalBlue(true), xPosCrystal, 160);
     }
     
     public void updateCrystalGreen()
