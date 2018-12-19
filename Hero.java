@@ -309,6 +309,15 @@ public class Hero extends Mover {
         hasKeyYellow = true;
         }
         
-    }   
+    }  
+    
+    public void grabCollectable()
+    {
+        if(isTouching(Collectables.class))
+        {
+            removeTouching(Collectables.class);
+        }
+        
+    }
     
 } 
