@@ -73,6 +73,8 @@ public class Hero extends Mover {
         grabKeyRed();
         grabKeyYellow();
         
+        grabCollectable();
+        
         if(isTouching(WaterTile.class) || isTouching(Enemy.class))        
         {
             setLocation(530, 375);            
@@ -316,6 +318,7 @@ public class Hero extends Mover {
         if(isTouching(Collectables.class))
         {
             removeTouching(Collectables.class);
+            Greenfoot.playSound("DOOM.mp3");
         }
         
     }
