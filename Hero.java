@@ -75,6 +75,11 @@ public class Hero extends Mover {
         
         grabCollectable();
         
+        if(hasKeyGreen == true && isTouching(Door.class))
+        {
+            // Hier volgende level invoeren
+        }
+        
         if(isTouching(WaterTile.class) || isTouching(Enemy.class))        
         {
             setLocation(530, 375);            
