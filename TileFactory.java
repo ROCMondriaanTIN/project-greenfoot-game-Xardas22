@@ -552,19 +552,19 @@ public class TileFactory {
             break;
             case 134:
               tile = new Tile("liquidLavaTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+            tile.isSolid = false;
             break;
             case 135:
-              tile = new Tile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+              tile = new WaterTile("liquidWater.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
             break;
             case 136:
-              tile = new Tile("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+              tile = new WaterTile("liquidWaterTop.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
             break;
             case 137:
-              tile = new Tile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
-            tile.isSolid = true;
+              tile = new WaterTile("liquidWaterTop_mid.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);
+            tile.isSolid = false;
             break;
             case 138:
               tile = new Tile("lock_blue.png", TileEngine.TILE_WIDTH, TileEngine.TILE_HEIGHT);

@@ -16,9 +16,6 @@ public class WaterTile extends Tile {
         super(image, width, heigth);
     }
        
-    public void Watertile()
-    {
-        
-    }
+    
     
 }

@@ -19,8 +19,6 @@ public class Hero extends Mover {
     
     private int animateCounter = 0;
     
-    boolean isDead = false;
-    
     public static boolean hasKeyGreen = false;
     public static boolean hasKeyBlue = false;
     public static boolean hasKeyRed = false;
@@ -73,6 +71,11 @@ public class Hero extends Mover {
         grabKeyBlue();
         grabKeyRed();
         grabKeyYellow();
+        
+        if(isTouching(WaterTile.class))
+        {
+            setLocation(530, 375);
+        }
                 
         
         if(scb == null)
