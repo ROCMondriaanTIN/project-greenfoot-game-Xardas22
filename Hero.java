@@ -47,9 +47,6 @@ public class Hero extends Mover {
 
     public boolean onGround()
     {
-//        Actor under = getOneObjectAtOffset(0, getHeight()/2, Tile.class);
-//        Tile tile = (Tile) under;
-//        return tile != null && tile.isSolid == true;
         Actor underLeft = getOneObjectAtOffset(-getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
         Actor underRight = getOneObjectAtOffset(getImage().getWidth() / 2, getImage().getHeight() / 2, Tile.class);
         Tile tile1 = (Tile) underLeft;
@@ -94,8 +91,6 @@ public class Hero extends Mover {
             velocityY = gravity;
         }
         applyVelocity();
-  
-        // animateCounter ++;
         
         animationSpeed ++;
     }
@@ -139,7 +134,6 @@ public class Hero extends Mover {
             direction = 1;
             if(animateCounter % 3 == 0)
             {
-                // animateLeft();
                 animateStandingLeft();
                 animator();
             }
@@ -152,7 +146,6 @@ public class Hero extends Mover {
             direction = 2;
             if(animateCounter % 3 == 0)
             {                
-                // animateRight();
                 animateStandingRight();
                 animator();
             }
