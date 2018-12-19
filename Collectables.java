@@ -5,24 +5,40 @@ public class Collectables extends Mover
 {
     
     
-    public enum collectables
+//    public enum collectables
+//    {
+//        coinZilver,
+//        coinGold,
+//        
+//        crystalRed, 
+//        crystalGreen, 
+//        crystalBlue, 
+//        crystalYellow,
+//        
+//        keyRed,
+//        keyGreen,
+//        keyBlue,
+//        keyYellow,
+//        
+//        levens,
+//    }
+    
+    
+    public Collectables()
     {
-        crystalRed, 
-        crystalGreen, 
-        crystalBlue, 
-        crystalYellow,
-        
-        keyRed,
-        keyGreen,
-        keyBlue,
-        keyYellow,
-        
-        levens,
+        super();
     }
+    
+    public Collectables(String image)
+    {
+        setImage(image);
+    }
+    
+    
     
     public void act() 
     {
-        
+        applyVelocity();
     }   
     
 }

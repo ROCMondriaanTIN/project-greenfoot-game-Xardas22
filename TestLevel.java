@@ -66,6 +66,9 @@ public class TestLevel extends World {
         addObject(coinGold, 825, 375);
         addObject(doorKeyGreen, 920, 375);
         addObject(crystalRed, 825, 275);
+        
+        Collectables collectable = new Collectables("hud_p1.png");
+        addObject(collectable, 650, 375);
        
         // CrystalHUD crystalHUD = new CrystalHUD();
         // KeyHUD  keyHUD = new KeyHUD();

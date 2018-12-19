@@ -311,4 +311,13 @@ public class Hero extends Mover {
         
     }   
     
+    public void grabTest()
+    {
+        if(isTouching(Collectables.class))
+        {
+            removeTouching(Collectables.class);
+        }
+        
+    }
+    
 } 
