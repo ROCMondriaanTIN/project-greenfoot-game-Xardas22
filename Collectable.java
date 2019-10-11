@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
-public class Collectables extends Mover
+public class Collectable extends Mover
 
 /* 
 Dit zorgt er voor dat een collectable op z'n plek blijft staan als je het oppakt.
@@ -11,32 +11,32 @@ Je geeft de methode de waarde (die ergens in Scoreboard.java staat) true aan in 
 {
     
     
-//    public enum collectables
-//    {
-//        crystalRed, 
-//        crystalGreen, 
-//        crystalBlue, 
-//        crystalYellow,
-//        
-//        keyRed,
-//        keyGreen,
-//        keyBlue,
-//        keyYellow,    
-//    }
+    public enum collectables
+    {
+        crystalRed, 
+        crystalGreen, 
+        crystalBlue, 
+        crystalYellow,
+
+        keyRed,
+        keyGreen,
+        keyBlue,
+        keyYellow,    
+    }
     
     boolean alwaysOnScreen =  false;
     
-    public Collectables()
+    public Collectable()
     {
         super();
     }
     
-    public Collectables(boolean onScreen)
+    public Collectable(boolean onScreen)
     {
         this.alwaysOnScreen = onScreen;
     }
     
-    public Collectables(String image)
+    public Collectable(String image)
     {
         setImage(image);
     }
