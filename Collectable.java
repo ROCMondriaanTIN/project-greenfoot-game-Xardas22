@@ -13,19 +13,19 @@ Je geeft de methode de waarde (die ergens in Scoreboard.java staat) true aan in 
     
     public enum collectables
     {
-        Crystal,
-        Key,
-        Coin,
+        CRYSTAL,
+        KEY,
+        COIN,
     }
 
     public enum color
     {
-        Red,
-        Green,
-        Blue,
-        Yellow,
-        Silver,
-        Gold,
+        RED,
+        GREEN,
+        BLUE,
+        YELLOW,
+        SILVER,
+        GOLD,
     }
     
     boolean alwaysOnScreen =  false;
